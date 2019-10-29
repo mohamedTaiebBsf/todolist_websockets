@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <title>Ma todolist</title>
+  </head>
+
+  <body>
+    <div class="todolist">
+      <h1>Ma Todolist</h1>
+      <ul id="lists"></ul>
+      <form action="/" method="post" id="form">
+        <p>
+          <label for="newtodo">Que dois-je faire ?</label>
+          <input type="text" name="newtodo" id="newtodo" autofocus />
+          <input type="submit" id="btn-submit" />
+        </p>
+      </form>
+    </div>
+
+    <div class="modal">
+      <div class="modal-wrapper">
+        <span class="closeBtn">&times;</span>
+        <div class="modal-content">
+          <div class="modat-title">
+            <h2>Mettre à jour l'item de Todolist!</h2>
+          </div>
+          <div class="modal-body">
+            <form action="/todo/ajouter/" method="post" class="formUpdate">
+              <div class="form-content">
+                <input
+                  type="text"
+                  name="updatedTodo"
+                  class="update-item-input"
+                  autofocus
+                />
+                <input type="submit" class="btn-update" value="Mettre à jour" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/actions.js"></script>
+  </body>
+</html>
